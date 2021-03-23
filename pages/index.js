@@ -23,7 +23,7 @@ export default function Home() {
         <div className="space-y-1 bg-gray-700 w-60">
           <a
             href="#"
-            className="flex items-center justify-between px-4 py-3 text-sm font-semibold text-white border-b border-gray-800 hover:bg-gray-700"
+            className="flex items-center justify-between h-12 px-4 py-3 text-sm font-semibold text-white border-b border-gray-800 shadow hover:bg-gray-700"
           >
             <span className="flex items-center">
               <span className="relative">
@@ -90,15 +90,56 @@ export default function Home() {
         </div>
 
         {/* Main chat area */}
-        <div className="flex-1 bg-gray-600">
-          <div className="flex items-center px-4 py-3">
+        <div className="flex-1 bg-gray-600 ">
+          <div className="flex items-center h-12 px-4 py-3 border-b border-gray-700 shadow">
             <PoundIcon className="w-6 h-6 mr-2 text-gray-300" />
             <span className="text-sm font-semibold text-white">general</span>
             <span className="self-stretch w-px mx-4 bg-light-accent"></span>
           </div>
+
+          <div className="mt-3">
+            <div className="flex px-4 py-1 hover:bg-gray-900 hover:bg-opacity-10">
+              <img
+                className="w-10 h-10 mr-4 rounded-full"
+                src="/adamwathan.jpeg"
+                alt=""
+              />
+              <div className="flex flex-col">
+                <div className="flex items-center text-sm font-medium text-teal-500">
+                  <span className="mr-2">adamwathan</span>
+                  <span
+                    className="tracking-wide text-gray-300"
+                    style={{ fontSize: 11 }}
+                  >
+                    01/15/2021
+                  </span>
+                </div>
+                <div className="text-sm text-gray-100">
+                  <p>
+                    You should never use something like leading-relaxed with a
+                    big font size, it goes against all typography best
+                    practices. Line height should decrease as font size gets
+                    bigger
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flex px-4 py-1 hover:bg-gray-900 hover:bg-opacity-10">
+              <div className="flex flex-col">
+                <div className="text-sm text-gray-100 ml-14">
+                  <p>
+                    You can override it in your config if you want but
+                    ultimately we chose the defaults they did because they let
+                    you get results closest to what a professional designer
+                    would do more easily
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="w-16 bg-gray-700"></div>
+        <div className="flex-shrink-0 w-64 bg-gray-700"></div>
       </main>
     </div>
   );

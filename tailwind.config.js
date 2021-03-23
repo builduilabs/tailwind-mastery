@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     colors: {
       ...defaultTheme.colors,
+      teal: colors.teal,
       gray: {
         50: "#D6D6D7",
         100: "#DCDDDE",
@@ -16,8 +17,10 @@ module.exports = {
         400: "#3B3C43",
         500: "#35373C",
         600: "#373940",
+        650: "#373940",
         700: "#303136",
         800: "#1F2124",
+        900: "#040405",
       },
       "light-accent": "rgba(255,255,255,.06)",
     },

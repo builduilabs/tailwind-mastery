@@ -5,7 +5,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <title>Discord Clone</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Component {...pageProps} />
     </>

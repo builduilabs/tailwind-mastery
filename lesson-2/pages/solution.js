@@ -44,7 +44,7 @@ export default function Home() {
 
             {showingMembers && (
               // Members
-              <div className="flex-shrink-0 w-64 p-3 bg-gray-700 overflow-y-scroll space-y-2">
+              <div className="w-64 p-3 bg-gray-700 space-y-2">
                 <p>Sam Selikoff</p>
               </div>
             )}

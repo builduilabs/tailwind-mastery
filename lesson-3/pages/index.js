@@ -1,35 +1,19 @@
 export default function Home() {
   return (
     <div className="flex text-white h-screen">
-      <div className="bg-gray-900 px-3 pt-3 space-y-2 overflow-y-scroll">
-        {[...Array(40).keys()].map((x, i) => (
-          <div className="w-12 h-12 bg-white rounded-full text-gray-900 flex items-center justify-center">
-            {i}
-          </div>
-        ))}
+      <div className="bg-gray-800 p-4">
+        <div className="bg-white text-gray-800 h-12 w-12 rounded-full flex items-center justify-center">
+          TW
+        </div>
       </div>
-
       <div className="bg-gray-700 w-60 flex flex-col">
-        <div className="h-12 flex-shrink-0 shadow-md flex items-center px-3">
-          Tailwind CSS
-        </div>
-        <div className="p-3 space-y-2 overflow-y-scroll">
-          {[...Array(40).keys()].map((x, i) => (
-            <p>Channel {i}</p>
-          ))}
-        </div>
+        <div className="shadow p-4">Tailwind CSS</div>
+        <div className="p-4 flex-1">Channel list</div>
       </div>
-
-      {/* <div className="bg-gray-500 flex-1 flex flex-col">
-        <div className="h-12 flex-shrink-0 shadow-md flex items-center px-3">
-          Messages
-        </div>
-        <div className="p-3 space-y-2 overflow-y-scroll">
-          {[...Array(40).keys()].map((x, i) => (
-            <p>Message {i}</p>
-          ))}
-        </div>
-      </div> */}
+      <div className="bg-gray-600 flex-1 flex flex-col">
+        <div className="shadow p-4"># general</div>
+        <div className="p-4 flex-">Messages</div>
+      </div>
     </div>
   );
 }

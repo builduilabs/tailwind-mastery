@@ -1,81 +1,38 @@
-import { useState } from "react";
-
 export default function Home() {
-  let [showingMembers, setShowingMembers] = useState(false);
-
   return (
-    <div>
-      <main className="flex h-screen overflow-hidden text-white">
-        {/* Servers */}
-        <div className="p-3 bg-gray-800 space-y-2 overflow-y-scroll">
-          {[...Array(40).keys()].map((x, i) => (
-            <div className="w-12 h-12 bg-white rounded-full text-gray-900 flex items-center justify-center">
-              {i}
-            </div>
+    <div className="flex text-white h-screen">
+      <div className="bg-gray-800 p-3 space-y-2 overflow-y-scroll">
+        {[...Array(50)].map((_, i) => (
+          <div className="bg-white text-gray-800 w-12 h-12 rounded-full flex items-center justify-center">
+            {i}
+          </div>
+        ))}
+      </div>
+
+      <div className="bg-gray-700 w-60 flex flex-col">
+        <div className="px-4 h-12 shadow-md flex items-center">
+          Tailwind CSS
+        </div>
+        <div className="p-4 flex-1 space-y-2 overflow-y-scroll">
+          {[...Array(50)].map((_, i) => (
+            <p># channel {i}</p>
           ))}
         </div>
+      </div>
 
-        {/* Channels */}
-        <div className="bg-gray-700 w-60 flex flex-col">
-          <div className="h-12 shadow-md flex-shrink-0 flex items-center px-3">
-            Tailwind CSS
-          </div>
-
-          <div className="p-3 overflow-y-scroll">
-            <div className="space-y-3">
-              {[...Array(40).keys()].map((x, i) => (
-                <p>Channel {i}</p>
-              ))}
-            </div>
-          </div>
+      <div className="bg-gray-600 flex-1 flex flex-col">
+        <div className="px-4 h-12 shadow-md flex items-center">general</div>
+        <div className="p-4 flex-1 space-y-4 overflow-y-scroll">
+          {[...Array(50)].map((_, i) => (
+            <p>
+              Message {i}. Lorem ipsum dolor sit, amet consectetur adipisicing
+              elit. Dolorum sapiente ipsa, porro rem nihil sed quos ipsum error
+              similique adipisci libero a! Delectus voluptates minima
+              voluptatibus nesciunt earum nobis sit?
+            </p>
+          ))}
         </div>
-
-        {/* Main chat area */}
-        <div className="flex-1 bg-gray-600 flex flex-col">
-          <div className="h-12 shadow-md p-3 flex justify-between">
-            <p>Welcome</p>
-            <button onClick={() => setShowingMembers(!showingMembers)}>
-              Show members
-            </button>
-          </div>
-          <div className="flex flex-1 overflow-hidden">
-            {/* Messages */}
-
-            <div className="p-3 flex-1 overflow-y-scroll space-y-2">
-              {[...Array(40).keys()].map((x, i) => (
-                <>
-                  <p>Message {i}</p>
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Voluptatem eum ad magnam quam rem! Delectus esse ab vitae
-                    aperiam optio accusantium maxime vel accusamus, sunt dolorum
-                    dolor id possimus fugit.
-                  </p>
-                </>
-              ))}
-            </div>
-
-            {showingMembers && (
-              // Members
-              <div className="flex-shrink-0 w-64 p-3 bg-gray-700 overflow-y-scroll space-y-2">
-                {[...Array(50).keys()].map((x, i) => (
-                  <p>Member {i}</p>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      </main>
+      </div>
     </div>
   );
-}
-
-function Lorem() {
-  return [...Array(40).keys()].map(() => (
-    <p className="pt-4">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo blanditiis
-      minus soluta ducimus sint quas deleniti quia magni sapiente adipisci,
-      harum labore. Quis nemo itaque numquam iure et! Ullam, totam?
-    </p>
-  ));
 }

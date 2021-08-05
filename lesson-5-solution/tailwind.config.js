@@ -5,6 +5,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Whitney", "Open Sans", ...defaultTheme.fontFamily.sans],
+        title: ["Ginto", "Open Sans", ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         gray: {
           50: "#ECEDEE",
@@ -18,10 +22,6 @@ module.exports = {
           800: "#2F3136",
           900: "#202225",
         },
-      },
-      fontFamily: {
-        sans: ["Whitney", "Open Sans", ...defaultTheme.fontFamily.sans],
-        title: ["Ginto", "Open Sans", ...defaultTheme.fontFamily.sans],
       },
     },
   },

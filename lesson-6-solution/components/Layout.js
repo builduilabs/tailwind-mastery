@@ -14,38 +14,17 @@ export default function Layout({ children }) {
   return (
     <div className="flex text-gray-100 h-screen">
       <div className="bg-gray-900 p-3 space-y-2 overflow-y-scroll">
-        {/* <button className="text-gray-100 w-12 h-12 duration-200 bg-gray-700 hover:bg-indigo-500 hover:text-white rounded-[24px] transition-all hover:rounded-2xl flex items-center justify-center">
-          <DiscordIcon className="w-7 h-5" />
-        </button>
-
         <NavLink href="/" active={router.pathname === "/"}>
-          <DiscordIcon className="w-7 h-5" />
-          {/* <img src={`/servers/${server.img}`} /> */}
-        {/* </NavLink> */}
-
-        <Link href="/">
-          <a className="block relative group">
-            <div
-              className={`${
-                router.pathname === "/"
-                  ? "top-1 bottom-1"
-                  : "top-3.5 bottom-3.5 scale-0 group-hover:scale-100 origin-left opacity-0 group-hover:opacity-100"
-              } absolute transition-all -left-3  w-1 bg-white rounded-r-md `}
-            />
-
-            <div className="active:translate-y-px">
-              <div
-                className={`${
-                  router.pathname === "/"
-                    ? "rounded-2xl bg-indigo-500 text-white"
-                    : "hover:rounded-2xl bg-gray-700 hover:bg-indigo-500 text-gray-100 hover:text-white"
-                }  w-12 h-12 duration-200  rounded-[24px] transition-all flex items-center justify-center overflow-hidden relative`}
-              >
-                <DiscordIcon className="w-7 h-5" />
-              </div>
-            </div>
-          </a>
-        </Link>
+          <div
+            className={`${
+              router.pathname === "/"
+                ? "bg-indigo-500 text-white"
+                : "bg-gray-700 hover:bg-indigo-500 text-gray-100 hover:text-white"
+            } w-12 h-12 duration-200 transition-colors flex items-center justify-center`}
+          >
+            <DiscordIcon className="w-7 h-5" />
+          </div>
+        </NavLink>
 
         <hr className="border-t-white/[.06] border-t-2 rounded-full w-8 m-auto" />
 
@@ -57,15 +36,6 @@ export default function Layout({ children }) {
           >
             <img src={`/servers/${server.img}`} />
           </NavLink>
-        ))}
-
-        {[...Array(40)].map((_, i) => (
-          <div
-            className="bg-white text-gray-800 w-12 h-12 rounded-full flex items-center justify-center"
-            key={i}
-          >
-            {i}
-          </div>
         ))}
       </div>
 
@@ -83,14 +53,14 @@ function NavLink({ href, children, active }) {
             active
               ? "top-1 bottom-1"
               : "top-3.5 bottom-3.5 scale-0 group-hover:scale-100 origin-left opacity-0 group-hover:opacity-100"
-          } absolute transition-all -left-3  w-1 bg-white rounded-r-md `}
+          } absolute transition-all -left-3 w-1 bg-white rounded-r-md `}
         />
 
         <div className="active:translate-y-px">
           <div
             className={`${
-              active ? "rounded-2xl" : "hover:rounded-2xl"
-            } w-12 h-12 duration-200 rounded-[24px] transition-all flex items-center justify-center overflow-hidden relative`}
+              active ? "rounded-2xl" : "rounded-3xl hover:rounded-2xl"
+            } w-12 h-12 duration-200 transition-all flex items-center justify-center overflow-hidden`}
           >
             {children}
           </div>

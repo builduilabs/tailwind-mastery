@@ -1,23 +1,17 @@
 export default function Home() {
   return (
-    <div className="flex text-gray-100 h-screen">
-      <div className="bg-gray-900 p-3 space-y-2 overflow-y-scroll">
-        <div className="bg-gray-700 text-gray-100 hover:bg-brand hover:text-white transition-all w-12 h-12 rounded-3xl hover:rounded-2xl flex items-center justify-center duration-200">
-          <DiscordLogo className="w-7 h-5" />
+    <div className="flex h-screen text-gray-100">
+      <div className="p-3 space-y-2 overflow-y-scroll bg-gray-900">
+        <div className="flex items-center justify-center w-12 h-12 text-gray-100 transition-all duration-200 bg-gray-700 rounded-3xl hover:rounded-2xl hover:bg-brand hover:text-white">
+          <DiscordIcon className="h-5 w-7" />
         </div>
-
-        {[...Array(40)].map((_, i) => (
-          <div className="bg-white text-gray-800 w-12 h-12 rounded-full flex items-center justify-center">
-            {i}
-          </div>
-        ))}
       </div>
 
-      <div className="bg-gray-800 w-60 flex flex-col">
-        <div className="px-3 h-12 shadow-md flex items-center font-semibold font-title text-white">
+      <div className="flex flex-col bg-gray-800 w-60">
+        <div className="flex items-center h-12 px-3 font-semibold text-white shadow-md font-title">
           Tailwind CSS
         </div>
-        <div className="text-gray-300 font-medium p-3 flex-1 overflow-y-scroll space-y-2 ">
+        <div className="flex-1 p-3 space-y-2 overflow-y-scroll font-medium text-gray-300 ">
           <p className="text-white">general</p>
           {[...Array(40)].map((_, i) => (
             <p>channel {i}</p>
@@ -25,9 +19,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-gray-700 flex-1 flex flex-col">
-        <div className="px-3 h-12 flex items-center shadow-md">general</div>
-        <div className="p-3 flex-1 space-y-4 overflow-y-scroll">
+      <div className="flex flex-col flex-1 bg-gray-700">
+        <div className="flex items-center h-12 px-3 shadow-md">general</div>
+        <div className="flex-1 p-3 space-y-4 overflow-y-scroll">
           {[...Array(40)].map((_, i) => (
             <p>
               Message {i}. Lorem ipsum dolor sit amet consectetur adipisicing
@@ -42,7 +36,7 @@ export default function Home() {
   );
 }
 
-function DiscordLogo(props) {
+function DiscordIcon(props) {
   return (
     <svg aria-hidden="false" viewBox="0 0 28 20" {...props}>
       <path

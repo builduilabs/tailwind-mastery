@@ -1,5 +1,6 @@
 import Head from "next/head";
 import "tailwindcss/tailwind.css";
+import Layout from "../components/Layout";
 import "../styles.css";
 
 function MyApp({ Component, pageProps }) {
@@ -9,7 +10,10 @@ function MyApp({ Component, pageProps }) {
         <title>Discord Clone</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }

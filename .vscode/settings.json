@@ -1,0 +1,16 @@
+{
+  "eslint.workingDirectories": [
+    "lesson-1",
+    "lesson-2",
+    "lesson-3",
+    "lesson-4",
+    "lesson-5",
+    "lesson-5-solution",
+    "lesson-6",
+    "lesson-6-solution",
+    "lesson-7",
+    "lesson-7-solution",
+    "lesson-8",
+    "lesson-8-solution"
+  ]
+}

@@ -14,7 +14,7 @@ export default function Home() {
         <div className="flex-1 p-3 space-y-2 overflow-y-scroll font-medium text-gray-300 ">
           <p className="text-white">general</p>
           {[...Array(40)].map((_, i) => (
-            <p>channel {i}</p>
+            <p key={i}>channel {i}</p>
           ))}
         </div>
       </div>
@@ -23,7 +23,7 @@ export default function Home() {
         <div className="flex items-center h-12 px-3 shadow-md">general</div>
         <div className="flex-1 p-3 space-y-4 overflow-y-scroll">
           {[...Array(40)].map((_, i) => (
-            <p>
+            <p key={i}>
               Message {i}. Lorem ipsum dolor sit amet consectetur adipisicing
               elit. Vel saepe laudantium sed reprehenderit incidunt! Hic rem
               quos reiciendis, fugit quae ratione beatae veniam laborum

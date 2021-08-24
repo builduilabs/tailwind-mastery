@@ -12,8 +12,8 @@ export default function Layout({ children }) {
   const { sid } = router.query;
 
   return (
-    <div className="flex text-gray-100 h-screen">
-      <div className="bg-gray-900 p-3 space-y-2 overflow-y-scroll">
+    <div className="flex h-screen text-gray-100">
+      <div className="p-3 space-y-2 overflow-y-scroll bg-gray-900">
         <NavLink href="/" active={router.pathname === "/"}>
           <div
             className={`${
@@ -22,7 +22,7 @@ export default function Layout({ children }) {
                 : "bg-gray-700 hover:bg-indigo-500 text-gray-100 hover:text-white"
             } w-12 h-12 duration-200 transition-colors flex items-center justify-center`}
           >
-            <DiscordIcon className="w-7 h-5" />
+            <DiscordIcon className="h-5 w-7" />
           </div>
         </NavLink>
 
@@ -47,14 +47,16 @@ export default function Layout({ children }) {
 function NavLink({ href, children, active }) {
   return (
     <Link href={href}>
-      <a className="block relative group">
-        <div
-          className={`${
-            active
-              ? "top-1 bottom-1"
-              : "top-3.5 bottom-3.5 scale-0 group-hover:scale-100 origin-left opacity-0 group-hover:opacity-100"
-          } absolute transition-all -left-3 w-1 bg-white rounded-r-md `}
-        />
+      <a className="relative block group">
+        <div className="absolute inset-y-0 flex items-center -left-3">
+          <div
+            className={`${
+              active
+                ? "h-10"
+                : "h-5 scale-0 group-hover:scale-100 origin-left opacity-0 group-hover:opacity-100"
+            } transition-all w-1 bg-white rounded-r-md `}
+          />
+        </div>
 
         <div className="active:translate-y-px">
           <div

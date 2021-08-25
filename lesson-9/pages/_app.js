@@ -17,14 +17,28 @@ function MyApp({ Component, pageProps }) {
       <div className="flex h-screen text-gray-100">
         <div className="p-3 space-y-2 overflow-y-scroll bg-gray-900">
           <Link href="/">
-            <a
-              className={`${
-                router.pathname === "/"
-                  ? "rounded-2xl bg-brand text-white"
-                  : "text-gray-100 hover:rounded-2xl hover:bg-brand hover:text-white bg-gray-700 rounded-3xl"
-              } flex items-center justify-center w-12 h-12  transition-all duration-200  `}
-            >
-              <DiscordIcon className="h-5 w-7" />
+            <a className="relative block group">
+              <div className="absolute flex items-center h-full -left-3">
+                <div
+                  className={`${
+                    router.pathname === "/"
+                      ? "h-10"
+                      : "h-5 scale-0 opacity-0 group-hover:opacity-100 group-hover:scale-100"
+                  } w-1 transition-all duration-200 origin-left bg-white rounded-r`}
+                ></div>
+              </div>
+
+              <div className="group-active:translate-y-px">
+                <div
+                  className={`${
+                    router.pathname === "/"
+                      ? "rounded-2xl bg-brand text-white"
+                      : "text-gray-100 group-hover:rounded-2xl group-hover:bg-brand group-hover:text-white bg-gray-700 rounded-3xl"
+                  } flex items-center justify-center w-12 h-12 transition-all duration-200`}
+                >
+                  <DiscordIcon className="h-5 w-7" />
+                </div>
+              </div>
             </a>
           </Link>
 

@@ -14,16 +14,13 @@ export default function Layout({ children }) {
   return (
     <div className="flex h-screen text-gray-100">
       <div className="p-3 space-y-2 overflow-y-scroll bg-gray-900">
-        <NavLink href="/" active={router.pathname === "/"}>
-          <div
-            className={`${
-              router.pathname === "/"
-                ? "bg-indigo-500 text-white"
-                : "bg-gray-700 hover:bg-indigo-500 text-gray-100 hover:text-white"
-            } w-12 h-12 duration-200 transition-colors flex items-center justify-center`}
-          >
-            <DiscordIcon className="h-5 w-7" />
-          </div>
+        <NavLink
+          href="/"
+          active={router.pathname === "/"}
+          activeClassName="bg-indigo-500 text-white"
+          inactiveClassName="bg-gray-700 group-hover:bg-indigo-500 text-gray-100 group-hover:text-white"
+        >
+          <DiscordIcon className="h-5 w-7" />
         </NavLink>
 
         <hr className="border-t-white/[.06] border-t-2 rounded-full w-8 m-auto" />
@@ -44,7 +41,13 @@ export default function Layout({ children }) {
   );
 }
 
-function NavLink({ href, children, active }) {
+function NavLink({
+  href,
+  children,
+  active,
+  activeClassName = "",
+  inactiveClassName = "",
+}) {
   return (
     <Link href={href}>
       <a className="relative block group">
@@ -61,7 +64,9 @@ function NavLink({ href, children, active }) {
         <div className="active:translate-y-px">
           <div
             className={`${
-              active ? "rounded-2xl" : "rounded-3xl hover:rounded-2xl"
+              active
+                ? `rounded-2xl ${activeClassName}`
+                : `rounded-3xl group-hover:rounded-2xl ${inactiveClassName}`
             } w-12 h-12 duration-200 transition-all flex items-center justify-center overflow-hidden`}
           >
             {children}

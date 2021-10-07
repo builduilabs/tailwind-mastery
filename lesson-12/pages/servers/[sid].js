@@ -1,5 +1,12 @@
 import { useRouter } from "next/router";
-import { CheckIcon, ChevronIcon, VerifiedIcon } from "../../components/icons";
+import {
+  AddPersonIcon,
+  BookIcon,
+  CheckIcon,
+  ChevronIcon,
+  SpeakerphoneIcon,
+  VerifiedIcon,
+} from "../../components/icons";
 
 export default function Server() {
   let router = useRouter();
@@ -15,11 +22,26 @@ export default function Server() {
           Tailwind CSS
           <ChevronIcon className="w-[18px] h-[18px] ml-auto opacity-80" />
         </button>
-        <div className="flex-1 p-3 space-y-2 overflow-y-scroll font-medium text-gray-300 ">
-          <p className="text-white">general</p>
-          {[...Array(40)].map((_, i) => (
-            <p key={i}>channel {i}</p>
-          ))}
+
+        <div className="flex-1 overflow-y-scroll font-medium text-gray-300 mt-[17px]">
+          <div className="space-y-0.5">
+            <a
+              href="#"
+              className="flex items-center px-2 mx-2 py-1 text-gray-300 hover:text-gray-100 hover:bg-gray-550/[0.16] rounded group"
+            >
+              <BookIcon className="w-5 h-5 mr-1.5 text-gray-400" />
+              welcome
+              <AddPersonIcon className="w-4 h-4 ml-auto text-gray-200 opacity-0 hover:text-gray-100 group-hover:opacity-100" />
+            </a>
+            <a
+              href="#"
+              className="flex items-center px-2 mx-2 py-1 text-gray-300 hover:text-gray-100 hover:bg-gray-550/[0.16] rounded group"
+            >
+              <SpeakerphoneIcon className="w-5 h-5 mr-1.5 text-gray-400" />
+              announcements
+              <AddPersonIcon className="w-4 h-4 ml-auto text-gray-200 opacity-0 hover:text-gray-100 group-hover:opacity-100" />
+            </a>
+          </div>
         </div>
       </div>
 

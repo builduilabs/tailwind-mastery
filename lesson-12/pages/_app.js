@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import "tailwindcss/tailwind.css";
-import { DiscordIcon } from "../components/icons";
+import { Discord } from "../components/icons";
 import "../styles.css";
 
 let servers = [
@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
       <div className="flex h-screen text-gray-100">
         <div className="p-3 space-y-2 overflow-y-scroll bg-gray-900">
           <NavLink href="/">
-            <DiscordIcon className="h-5 w-7" />
+            <Discord className="h-5 w-7" />
           </NavLink>
 
           <hr className="border-t-white/[.06] border-t-2 rounded mx-2" />

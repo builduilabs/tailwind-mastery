@@ -72,7 +72,7 @@ export function SpeakerphoneIcon(props) {
   );
 }
 
-export function ArrowComponent(props) {
+export function ArrowIcon(props) {
   return (
     <svg viewBox="0 0 24 24" {...props}>
       <path

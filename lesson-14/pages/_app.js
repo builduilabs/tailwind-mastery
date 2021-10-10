@@ -12,6 +12,8 @@ let servers = [
 ];
 
 function MyApp({ Component, pageProps }) {
+  let router = useRouter();
+
   return (
     <>
       <Head>
@@ -28,7 +30,11 @@ function MyApp({ Component, pageProps }) {
           <hr className="border-t-white/[.06] border-t-2 rounded mx-2" />
 
           {servers.map((server) => (
-            <NavLink href={`/servers/${server.id}`} key={server.id}>
+            <NavLink
+              href={`/servers/${server.id}/channels/1`}
+              active={+router.query.sid === +server.id}
+              key={server.id}
+            >
               <img src={`/servers/${server.img}`} alt="" />
             </NavLink>
           ))}
@@ -42,8 +48,9 @@ function MyApp({ Component, pageProps }) {
 
 export default MyApp;
 
-function NavLink({ href, children }) {
+function NavLink({ href, active, children }) {
   let router = useRouter();
+  active ||= router.asPath === href;
 
   return (
     <Link href={href}>
@@ -51,7 +58,7 @@ function NavLink({ href, children }) {
         <div className="absolute flex items-center h-full -left-3">
           <div
             className={`${
-              router.asPath === href
+              active
                 ? "h-10"
                 : "h-5 scale-0 opacity-0 group-hover:opacity-100 group-hover:scale-100"
             } w-1 transition-all duration-200 origin-left bg-white rounded-r`}
@@ -61,7 +68,7 @@ function NavLink({ href, children }) {
         <div className="group-active:translate-y-px">
           <div
             className={`${
-              router.asPath === href
+              active
                 ? "rounded-2xl bg-brand text-white"
                 : "text-gray-100 group-hover:rounded-2xl group-hover:bg-brand group-hover:text-white bg-gray-700 rounded-3xl"
             } flex items-center justify-center w-12 h-12 transition-all duration-200 overflow-hidden`}

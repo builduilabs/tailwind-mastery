@@ -2,8 +2,19 @@ import * as Icons from "../../../../components/icons";
 import data from "../../../../data.json";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Server() {
+  let [closedCategories, setClosedCategories] = useState([]);
+
+  function toggleCategory(categoryId) {
+    setClosedCategories((closedCategories) =>
+      closedCategories.includes(categoryId)
+        ? closedCategories.filter((id) => id !== categoryId)
+        : [...closedCategories, categoryId]
+    );
+  }
+
   return (
     <>
       <div className="flex flex-col bg-gray-800 w-60">
@@ -20,16 +31,31 @@ export default function Server() {
           {data["1"].categories.map((category) => (
             <div key={category.id}>
               {category.label && (
-                <button className="flex items-center px-0.5 text-xs uppercase font-title tracking-wide hover:text-gray-100 w-full">
-                  <Icons.Arrow className="w-3 h-3 mr-0.5" />
+                <button
+                  onClick={() => toggleCategory(category.id)}
+                  className="flex items-center px-0.5 text-xs uppercase font-title tracking-wide hover:text-gray-100 w-full"
+                >
+                  <Icons.Arrow
+                    className={`${
+                      closedCategories.includes(category.id) ? "-rotate-90" : ""
+                    } w-3 h-3 mr-0.5 transition duration-200`}
+                  />
                   {category.label}
                 </button>
               )}
 
               <div className="space-y-0.5 mt-[5px]">
-                {category.channels.map((channel) => (
-                  <ChannelLink channel={channel} key={channel.id} />
-                ))}
+                {category.channels
+                  .filter((channel) => {
+                    let categoryIsOpen = !closedCategories.includes(
+                      category.id
+                    );
+
+                    return categoryIsOpen || channel.unread;
+                  })
+                  .map((channel) => (
+                    <ChannelLink channel={channel} key={channel.id} />
+                  ))}
               </div>
             </div>
           ))}

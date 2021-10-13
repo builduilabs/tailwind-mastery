@@ -15,9 +15,6 @@ module.exports = {
         sans: ["Whitney", "Open Sans", ...defaultTheme.fontFamily.sans],
         title: ["Ginto", "Open Sans", ...defaultTheme.fontFamily.sans],
       },
-      fontSize: {
-        sm: ".9375rem",
-      },
       colors: {
         brand: "#5965F2",
         gray: {

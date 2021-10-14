@@ -29,6 +29,7 @@ module.exports = {
           700: "#36393F",
           800: "#2F3136",
           900: "#202225",
+          950: "#040405",
         },
       },
     },
@@ -36,5 +37,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

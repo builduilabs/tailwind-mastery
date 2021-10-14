@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.4",
     "autoprefixer": "^10.3.1",
+    "faker": "^5.5.3",
     "next": "11.1.0",
     "postcss": "^8.3.6",
     "react": "17.0.2",

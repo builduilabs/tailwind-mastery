@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import "tailwindcss/tailwind.css";
 import { Discord } from "../components/icons";
+import { data } from "../data";
 import "../styles.css";
 
 let servers = [
@@ -13,6 +14,9 @@ let servers = [
 
 function MyApp({ Component, pageProps }) {
   let router = useRouter();
+  if (!router.isReady) {
+    return null;
+  }
 
   return (
     <>
@@ -31,7 +35,9 @@ function MyApp({ Component, pageProps }) {
 
           {servers.map((server) => (
             <NavLink
-              href={`/servers/${server.id}/channels/1`}
+              href={`/servers/${server.id}/channels/${
+                data[server.id].categories[0].channels[0].id
+              }`}
               active={+router.query.sid === +server.id}
               key={server.id}
             >

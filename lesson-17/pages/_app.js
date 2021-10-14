@@ -13,6 +13,9 @@ let servers = [
 
 function MyApp({ Component, pageProps }) {
   let router = useRouter();
+  if (!router.isReady) {
+    return null;
+  }
 
   return (
     <>

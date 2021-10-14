@@ -2,16 +2,16 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import * as Icons from "../../../../components/icons";
-// import Message from "../../../../components/message";
 import { data } from "../../../../data";
 
 export default function Server() {
   let router = useRouter();
-  let [closedCategories, setClosedCategories] = useState([]);
-  let channel = data[`${router.query.sid}`].categories
+  let server = data[`${router.query.sid}`];
+  let channel = server.categories
     .map((c) => c.channels)
     .flat()
     .find((channel) => +channel.id === +router.query.cid);
+  let [closedCategories, setClosedCategories] = useState([]);
 
   function toggleCategory(categoryId) {
     setClosedCategories((closedCategories) =>
@@ -29,7 +29,7 @@ export default function Server() {
             <Icons.Verified className="absolute w-4 h-4 text-gray-550" />
             <Icons.Check className="absolute w-4 h-4" />
           </div>
-          Tailwind CSS
+          {server.label}
           <Icons.Chevron className="w-[18px] h-[18px] ml-auto opacity-80" />
         </button>
 
@@ -83,10 +83,18 @@ export default function Server() {
             </>
           )}
           <div className="flex items-center ml-auto">
-            <Icons.HashtagWithSpeechBubble className="w-6 h-6 mx-2 text-gray-200" />
-            <Icons.Bell className="w-6 h-6 mx-2 text-gray-200" />
-            <Icons.Pin className="w-6 h-6 mx-2 text-gray-200" />
-            <Icons.People className="w-6 h-6 mx-2 text-gray-200" />
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.HashtagWithSpeechBubble className="w-6 h-6 mx-2" />
+            </button>
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.Bell className="w-6 h-6 mx-2" />
+            </button>
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.Pin className="w-6 h-6 mx-2" />
+            </button>
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.People className="w-6 h-6 mx-2" />
+            </button>
             <div className="relative mx-2">
               <input
                 className="h-6 px-1.5 text-sm font-medium placeholder-gray-400 bg-gray-900 border-none rounded w-36"
@@ -97,8 +105,12 @@ export default function Server() {
                 <Icons.Hourglass className="w-4 h-4 text-gray-400" />
               </div>
             </div>
-            <Icons.Inbox className="w-6 h-6 mx-2 text-gray-200" />
-            <Icons.QuestionCircle className="w-6 h-6 mx-2 text-gray-200" />
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.Inbox className="w-6 h-6 mx-2" />
+            </button>
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.QuestionCircle className="w-6 h-6 mx-2" />
+            </button>
           </div>
         </div>
 

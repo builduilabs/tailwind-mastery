@@ -1,5 +1,5 @@
 import * as Icons from "../../../../components/icons";
-import data from "../../../../data.json";
+import { data } from "../../../../data";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";

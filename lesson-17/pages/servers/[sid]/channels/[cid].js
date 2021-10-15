@@ -6,6 +6,12 @@ import { useState } from "react";
 
 export default function Server() {
   let [closedCategories, setClosedCategories] = useState([]);
+  let router = useRouter();
+  let server = data[`${router.query.sid}`];
+  let channel = server.categories
+    .map((c) => c.channels)
+    .flat()
+    .find((channel) => +channel.id === +router.query.cid);
 
   function toggleCategory(categoryId) {
     setClosedCategories((closedCategories) =>
@@ -62,8 +68,43 @@ export default function Server() {
         </div>
       </div>
 
-      <div className="flex flex-col flex-1 bg-gray-700">
-        <div className="flex items-center h-12 px-3 shadow-sm">general</div>
+      <div className="flex flex-col flex-1 flex-shrink min-w-0 bg-gray-700">
+        <div className="flex items-center h-12 px-2 shadow-sm">
+          <div className="flex items-center">
+            <Icons.Hashtag className="w-6 h-6 mx-2 font-semibold text-gray-400" />
+            <span className="mr-2 text-white font-title">{channel.label}</span>
+          </div>
+
+          {channel.description && (
+            <>
+              <div className="w-px h-6 mx-2 bg-white/[.06]"></div>
+              <div className="mx-2 text-sm font-medium text-gray-200 truncate">
+                {channel.description}
+              </div>
+            </>
+          )}
+
+          <div className="flex items-center ml-auto">
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.HashtagWithSpeechBubble className="w-6 h-6 mx-2" />
+            </button>
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.Bell className="w-6 h-6 mx-2" />
+            </button>
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.Pin className="w-6 h-6 mx-2" />
+            </button>
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.People className="w-6 h-6 mx-2" />
+            </button>
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.Inbox className="w-6 h-6 mx-2" />
+            </button>
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.QuestionCircle className="w-6 h-6 mx-2" />
+            </button>
+          </div>
+        </div>
         <div className="flex-1 p-3 space-y-4 overflow-y-scroll">
           {[...Array(40)].map((_, i) => (
             <p key={i}>

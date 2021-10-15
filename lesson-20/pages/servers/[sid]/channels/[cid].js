@@ -34,7 +34,7 @@ export default function Server() {
         </button>
 
         <div className="flex-1 overflow-y-scroll font-medium text-gray-300 pt-3 space-y-[21px]">
-          {data[0].categories.map((category) => (
+          {server.categories.map((category) => (
             <div key={category.id}>
               {category.label && (
                 <button
@@ -137,6 +137,7 @@ export default function Server() {
 function ChannelLink({ channel }) {
   let Icon = channel.icon ? Icons[channel.icon] : Icons.Hashtag;
   let router = useRouter();
+  let server = data.find((server) => +server.id === +router.query.sid);
   let active = +channel.id === +router.query.cid;
   let state = active
     ? "active"
@@ -152,7 +153,7 @@ function ChannelLink({ channel }) {
   };
 
   return (
-    <Link href={`/servers/1/channels/${channel.id}`}>
+    <Link href={`/servers/${server.id}/channels/${channel.id}`}>
       <a
         className={`${classes[state]} flex items-center px-2 mx-2 py-1 rounded group relative`}
       >

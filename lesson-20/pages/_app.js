@@ -5,12 +5,7 @@ import { useEffect, useState } from "react";
 import "tailwindcss/tailwind.css";
 import { Discord } from "../components/icons";
 import "../styles.css";
-
-let servers = [
-  { id: "1", img: "tailwind.png" },
-  { id: "2", img: "next.png" },
-  { id: "3", img: "mirage.png" },
-];
+import { data } from "../data";
 
 function MyApp({ Component, pageProps }) {
   let router = useRouter();
@@ -37,9 +32,9 @@ function MyApp({ Component, pageProps }) {
 
           <hr className="border-t-white/[.06] border-t-2 rounded mx-2" />
 
-          {servers.map((server) => (
+          {data.map((server) => (
             <NavLink
-              href={`/servers/${server.id}/channels/1`}
+              href={`/servers/${server.id}/channels/${server.categories[0].channels[0].id}`}
               active={+router.query.sid === +server.id}
               key={server.id}
             >

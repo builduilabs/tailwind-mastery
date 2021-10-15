@@ -72,7 +72,9 @@ export default function Server() {
         <div className="flex items-center h-12 px-2 shadow-sm">
           <div className="flex items-center">
             <Icons.Hashtag className="w-6 h-6 mx-2 font-semibold text-gray-400" />
-            <span className="mr-2 text-white font-title">{channel.label}</span>
+            <span className="mr-2 text-white font-title whitespace-nowrap">
+              {channel.label}
+            </span>
           </div>
 
           {channel.description && (
@@ -97,6 +99,16 @@ export default function Server() {
             <button className="text-gray-200 hover:text-gray-100">
               <Icons.People className="w-6 h-6 mx-2" />
             </button>
+            <div className="relative mx-2">
+              <input
+                type="text"
+                placeholder="Search"
+                className="h-6 px-1.5 text-sm font-medium placeholder-gray-400 bg-gray-900 border-none rounded w-36"
+              />
+              <div className="absolute inset-y-0 right-0 flex items-center">
+                <Icons.Spyglass className="w-4 h-4 mr-1.5 text-gray-400" />
+              </div>
+            </div>
             <button className="text-gray-200 hover:text-gray-100">
               <Icons.Inbox className="w-6 h-6 mx-2" />
             </button>

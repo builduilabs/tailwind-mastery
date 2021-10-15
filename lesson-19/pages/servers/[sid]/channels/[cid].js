@@ -117,14 +117,16 @@ export default function Server() {
             </button>
           </div>
         </div>
-        <div className="flex-1 p-3 space-y-4 overflow-y-scroll">
-          {[...Array(40)].map((_, i) => (
-            <p key={i}>
-              Message {i}. Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Vel saepe laudantium sed reprehenderit incidunt! Hic rem
-              quos reiciendis, fugit quae ratione beatae veniam laborum
-              voluptatem, iusto dolorum, voluptates suscipit quia.
-            </p>
+
+        <div className="flex-1 overflow-y-scroll">
+          {channel.messages.map((message, i) => (
+            <div key={message.id}>
+              {i === 0 || message.user !== channel.messages[i - 1].user ? (
+                <MessageWithUser message={message} />
+              ) : (
+                <Message message={message} />
+              )}
+            </div>
           ))}
         </div>
       </div>
@@ -162,5 +164,36 @@ function ChannelLink({ channel }) {
         <Icons.AddPerson className="w-4 h-4 ml-auto text-gray-200 opacity-0 hover:text-gray-100 group-hover:opacity-100" />
       </a>
     </Link>
+  );
+}
+
+function MessageWithUser({ message }) {
+  return (
+    <div className="leading-[22px] mt-[17px] flex pl-4 pr-16 py-0.5 hover:bg-gray-950/[.07]">
+      <img
+        className="w-10 h-10 mr-4 rounded-full mt-0.5"
+        src={message.avatarUrl}
+        alt=""
+      />
+      <div>
+        <p className="flex items-baseline">
+          <span className="mr-2 font-medium text-green-400">
+            {message.user}
+          </span>
+          <span className="text-xs font-medium text-gray-400">
+            {message.date}
+          </span>
+        </p>
+        <p className="text-gray-100">{message.text}</p>
+      </div>
+    </div>
+  );
+}
+
+function Message({ message }) {
+  return (
+    <div className="pl-4 pr-16 py-0.5 hover:bg-gray-950/[.07] leading-[22px]">
+      <p className="text-gray-100 pl-14">{message.text}</p>
+    </div>
   );
 }

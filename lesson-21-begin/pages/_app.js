@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <div className="flex h-screen text-gray-100">
-        <div className="hidden p-3 space-y-2 overflow-y-scroll bg-gray-900 md:block">
+        <div className="p-3 space-y-2 overflow-y-scroll bg-gray-900">
           <NavLink href="/">
             <Discord className="h-5 w-7" />
           </NavLink>

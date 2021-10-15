@@ -23,7 +23,7 @@ export default function Server() {
 
   return (
     <>
-      <div className="flex flex-col bg-gray-800 w-60">
+      <div className="flex-col hidden bg-gray-800 md:flex w-60">
         <button className="flex items-center h-12 px-4 font-semibold text-white shadow-sm font-title text-[15px] hover:bg-gray-550/[0.16] transition">
           <div className="relative w-4 h-4 mr-1">
             <Icons.Verified className="absolute w-4 h-4 text-gray-550" />
@@ -79,14 +79,25 @@ export default function Server() {
 
           {channel.description && (
             <>
-              <div className="w-px h-6 mx-2 bg-white/[.06]"></div>
-              <div className="mx-2 text-sm font-medium text-gray-200 truncate">
+              <div className="hidden md:block w-px h-6 mx-2 bg-white/[.06]"></div>
+              <div className="hidden mx-2 text-sm font-medium text-gray-200 truncate md:block">
                 {channel.description}
               </div>
             </>
           )}
 
-          <div className="flex items-center ml-auto">
+          {/* Mobile buttons */}
+          <div className="flex items-center ml-auto md:hidden">
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.HashtagWithSpeechBubble className="w-6 h-6 mx-2" />
+            </button>
+            <button className="text-gray-200 hover:text-gray-100">
+              <Icons.People className="w-6 h-6 mx-2" />
+            </button>
+          </div>
+
+          {/* Desktop buttons */}
+          <div className="items-center hidden ml-auto md:flex">
             <button className="text-gray-200 hover:text-gray-100">
               <Icons.HashtagWithSpeechBubble className="w-6 h-6 mx-2" />
             </button>

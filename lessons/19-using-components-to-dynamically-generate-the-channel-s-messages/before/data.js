@@ -273,7 +273,10 @@ function getMessages() {
   return [...Array(faker.datatype.number({ min: 7, max: 25 }))]
     .map(() => {
       let user = faker.internet.userName();
-      let avatarUrl = faker.image.avatar();
+      let avatarUrl = `/avatars/${faker.datatype.number({
+        min: 0,
+        max: 25,
+      })}.jpg`;
 
       return [...Array(faker.datatype.number({ min: 1, max: 4 }))].map(() => ({
         id: faker.datatype.number(),

@@ -3,7 +3,7 @@
 
 Get acquainted with Tailwind's utility-first approach by building a custom message component.
 
-Watch on Build UI: [buildui.com/series/tailwind-mastery/a-taste-of-tailwind](http://localhost:3000/series/tailwind-mastery/a-taste-of-tailwind)
+Watch on Build UI 👉 [buildui.com/series/tailwind-mastery/a-taste-of-tailwind](http://localhost:3000/series/tailwind-mastery/a-taste-of-tailwind)
 
 ## Links
 

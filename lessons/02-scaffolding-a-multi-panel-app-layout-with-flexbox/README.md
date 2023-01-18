@@ -2,4 +2,3 @@
 
 Learn how to use Tailwind’s Flexbox utilities to recreate the multi-panel app layout found in Discord. You’ll be able to choose which panels should stay fixed, and which should stretch to fill up the remaining space of the viewport.
 
-https://egghead.io/lessons/tailwind-scaffolding-a-multi-panel-app-layout-with-flexbox

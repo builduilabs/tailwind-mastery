@@ -4,4 +4,3 @@ Tailwind has no built-in APIs for conditionally applying styles. Instead, it enc
 
 We can do this in our Next.js application by creating a second URL and page, and refactoring our server navigation to persist across every page of our app. Now we can use the useRouter hook from Next.js to determine which URL is active and use that to apply different styles to our navigation links.
 
-https://egghead.io/lessons/tailwind-conditionally-applying-classes-based-on-the-active-url

@@ -24,5 +24,5 @@ npm run dev
 Then navigate to
 
 ```
-http://localhost:3000/1-steps
+http://localhost:3000
 ```

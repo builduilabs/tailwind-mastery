@@ -1,6 +1,6 @@
 # Scaffolding a multipanel layout
 
-Use Tailwind's flexbox utilities to make an application layout with fixed and flexible panels.
+Use Tailwind's Flexbox utilities to make an application layout with fixed and flexible panels.
 
 Watch on Build UI → [buildui.com/series/tailwind-mastery/scaffolding-a-multipanel-layout](http://buildui.com/series/tailwind-mastery/scaffolding-a-multipanel-layout)
 

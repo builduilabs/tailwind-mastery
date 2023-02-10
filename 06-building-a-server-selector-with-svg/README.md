@@ -1,4 +1,4 @@
-# Building an server selector with SVGs
+# Building a server selector with SVGs
 
 See how easy it is to tweak the styles of an SVG icon directly using utility classes.
 

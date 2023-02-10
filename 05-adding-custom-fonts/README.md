@@ -14,7 +14,7 @@ Watch on Build UI → [buildui.com/series/tailwind-mastery/adding-custom-fonts](
 From the root,
 
 ```sh
-cd tailwind-mastery/05-adding-custom-fonts
+cd tailwind-mastery/05-adding-custom-fonts/end
 npm i
 npm run dev
 ```

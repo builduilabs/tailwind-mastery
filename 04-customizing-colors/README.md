@@ -14,7 +14,7 @@ Watch on Build UI → [buildui.com/series/tailwind-mastery/customizing-colors](h
 From the root,
 
 ```sh
-cd tailwind-mastery/04-customizing-colors
+cd tailwind-mastery/04-customizing-colors/end
 npm i
 npm run dev
 ```

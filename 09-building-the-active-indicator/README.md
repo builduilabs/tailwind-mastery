@@ -6,8 +6,8 @@ Watch on Build UI → [buildui.com/series/tailwind-mastery/building-the-active-i
 
 ## Links
 
-- [View the starting code](./begin/pages/index.js)
-- [View the ending code](./end/pages/index.js)
+- [View the starting code](./begin/pages/_app.js)
+- [View the ending code](./end/pages/_app.js)
 
 ## Running the demo locally
 

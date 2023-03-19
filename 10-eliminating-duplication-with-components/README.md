@@ -6,8 +6,8 @@ Watch on Build UI → [buildui.com/series/tailwind-mastery/eliminating-duplicati
 
 ## Links
 
-- [View the starting code](./begin)
-- [View the ending code](./end)
+- [View the starting code](./begin/pages)
+- [View the ending code](./end/pages)
 
 ## Running the demo locally
 

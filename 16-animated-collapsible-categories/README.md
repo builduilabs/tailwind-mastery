@@ -2,7 +2,6 @@
 
 Use React state and Tailwind transitions to animate a collapsed category's icon.
 
-
 Watch on Build UI → [buildui.com/series/tailwind-mastery/animated-collapsible-categories](http://buildui.com/series/tailwind-mastery/animated-collapsible-categories)
 
 ## Links

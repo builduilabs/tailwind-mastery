@@ -1,6 +1,6 @@
 # Controlling layout with truncated text
 
-Use the truncate utility to control which panel in our layout grows or shrinks based on the available space.
+Use the truncate utility to control which panel grows or shrinks based on the available space.
 
 Watch on Build UI → [buildui.com/series/tailwind-mastery/controlling-layout-with-truncated-text](http://buildui.com/series/tailwind-mastery/controlling-layout-with-truncated-text)
 

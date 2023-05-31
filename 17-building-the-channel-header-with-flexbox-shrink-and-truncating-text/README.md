@@ -1,4 +1,4 @@
-# Building the Channel Header with Flexbox Shrink and Truncating Text
+# Controlling layout with truncated text
 
-Learn how to use the flexbox-shrink utility to choose which parts of our multi-column layout shrink or expand to accommodate the available space. Use the truncate utility to add ellipses when the channel description is too long.
+Use the truncate utility to control which panel in our layout grows or shrinks based on the available space.
 

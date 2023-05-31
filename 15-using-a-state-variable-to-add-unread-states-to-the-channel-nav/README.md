@@ -2,7 +2,7 @@
 
 Style a channel's unread state using a simple pattern to improve readability.
 
-Watch on Build UI → [buildui.com/series/tailwind-mastery/styling-the-active-channel](http://buildui.com/series/tailwind-mastery/using-a-state-variable-to-style-unread-channels)
+Watch on Build UI → [buildui.com/series/tailwind-mastery/using-a-state-variable-to-style-unread-channels](http://buildui.com/series/tailwind-mastery/using-a-state-variable-to-style-unread-channels)
 
 ## Links
 
